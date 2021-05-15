@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Book, User, Review } = require('../models');
+const withAuth = require('../utils/auth');
 
 // display all books associated with user but only include the thumbnail, title & author from the books npm package
 router.get('/', (req, res) => {
