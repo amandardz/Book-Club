@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const books = require('google-books-search');
 
 
 const sequelize = require('./config/connection');
