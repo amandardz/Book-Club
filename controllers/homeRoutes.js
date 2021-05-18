@@ -10,9 +10,9 @@ router.get('/', (req, res) => {
 
 //The book page will include thumbnail, title, author, description, publish date from the books npm package
 //The book page will also include reviews
-router.get('/bookpage', async (req, res) => {
+router.get('/booksearch', async (req, res) => {
 
-    res.render('bookpage');
+    res.render('booksearch');
 });
 
 router.get('/login', (req, res) => {
