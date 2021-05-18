@@ -5,14 +5,14 @@ const withAuth = require('../utils/auth');
 // display all books associated with user but only include the thumbnail, title & author from the books npm package
 router.get('/', (req, res) => {
 
-    res.render('homepage.handlebars');
+    res.render('homepage');
 });
 
 //The book page will include thumbnail, title, author, description, publish date from the books npm package
 //The book page will also include reviews
-router.get('/bookPage', withAuth, async (req, res) => {
+router.get('/bookpage', async (req, res) => {
 
-    res.render('bookpage.handlebars');
+    res.render('bookpage');
 });
 
 router.get('/login', (req, res) => {
