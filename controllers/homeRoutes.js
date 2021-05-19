@@ -5,7 +5,9 @@ const withAuth = require('../utils/auth');
 // display all books associated with user but only include the thumbnail, title & author from the books npm package
 router.get('/', (req, res) => {
 
+
     res.render('homepage');
+
 });
 
 //The book page will include thumbnail, title, author, description, publish date from the books npm package
@@ -13,6 +15,41 @@ router.get('/', (req, res) => {
 router.get('/booksearch', async (req, res) => {
 
     res.render('booksearch');
+
+});
+
+router.get('/bookpage', withAuth, async (req, res) => {
+    try {
+        const bookData = await Book.findAll({
+            include: [
+                {
+                    model: Book,
+                    attributes: [
+                        'title',
+                        'author',
+                        'description'
+                    ],
+                }, {
+                    model: Review,
+                    attributes: [
+                        'comment',
+                        'user_id'
+                    ]
+                }, {
+                    model: User,
+                    attributes: ['name'],
+                }
+            ],
+        });
+
+        const books = bookData.map((book) => book.get({ plain: true }));
+        res.render('bookpage', {
+            books,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {
