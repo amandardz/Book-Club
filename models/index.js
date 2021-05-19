@@ -1,5 +1,22 @@
-//user has one book 
+const User = require('./User');
+const Book = require('./Book');
+const Review = require('./Review')
 
-//put route & update the book that the user has with a new book. must worry about their review for prior book to be 
+Book.hasMany(Review, {
+  foreignKey: 'book_id',
+});
 
-//a book is going to have many reviews 
+Review.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+User.hasMany(Review, {
+    foreignKey: 'user_id'
+});
+
+module.exports = { 
+    User, 
+    Book,
+    Review
+ };
