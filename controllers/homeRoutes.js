@@ -29,6 +29,14 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+router.get('/dashboard', async(req, res) => {
+    res.render('dashboard')
+})
+
+router.get('/dashboard/book/:id', async(req, res) => {
+    res.render('bookinfo')
+})
 //The book page will include thumbnail, title, author, description, publish date from the books npm package
 //The book page will also include reviews
 router.get('/booksearch', async (req, res) => {
@@ -44,7 +52,6 @@ router.get('/booksearch', async (req, res) => {
                 },
             ],
         });
-        
 
         res.render('booksearch');
     } catch (err) {
@@ -53,7 +60,7 @@ router.get('/booksearch', async (req, res) => {
 
 });
 
-router.get('/bookpage', withAuth, async (req, res) => {
+router.get('/bookinfo', withAuth, async (req, res) => {
     try {
         const bookData = await Book.findAll({
             include: [
@@ -71,7 +78,7 @@ router.get('/bookpage', withAuth, async (req, res) => {
         });
 
         const books = bookData.map((book) => book.get({ plain: true }));
-        res.render('bookpage', {
+        res.render('bookinfo', {
             books,
             logged_in: req.session.logged_in
         });
@@ -81,7 +88,7 @@ router.get('/bookpage', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return
     }
@@ -89,7 +96,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return
     }

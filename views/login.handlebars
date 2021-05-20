@@ -1,15 +1,19 @@
-<div class="position-absolute top-50 start-50 translate-middle">
-  <h2 class="text-center">Login</h2>
-  <form>
-    <div class="mb-3">
-      <label for="user-email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="user-password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="user-password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="login-wrapper d-flex flex-column align-middle align-items-center justify-content-center">
+  <div>
+    <h2 class="text-center">Login</h2>
+    <form class="login-form">
+      <div class="mb-3">
+        <label for="user-email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="user-password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="user-password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </div>
+
+<script src="./js/script.js"></script>
