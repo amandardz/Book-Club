@@ -19,3 +19,12 @@ console.log(testBook.data.items[0].volumeInfo.title)
 document
 .querySelector('.search-button')
 .addEventListener('submit', onSearch);
+
+//need a function that takes in a book and posts that book to the database 
+// const response = await fetch('/api/books', {
+//     method: 'POST',
+//     body: JSON.stringify({ name, email, password }),
+//     headers: { 'Content-Type': 'application/json' },
+//   });
+
+//write a click event to grab the selected book and save on the database
