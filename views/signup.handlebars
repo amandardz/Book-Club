@@ -1,19 +1,21 @@
-<div class="position-absolute top-50 start-50 translate-middle">
+<div class="d-flex flex-column align-items-center justify-content-center">
   <h2 class="text-center">Signup</h2>
-  <form>
+  <form class="signup-form">
     <div class="mb-3">
-      <label for="user-name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="user-name">
+      <label for="user-name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="user-name-signup">
     </div>
     <div class="mb-3">
       <label for="user-email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="user-email-signup" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-3">
       <label for="user-password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="user-password">
+      <input type="password" class="form-control" id="user-password-signup">
     </div>
     <button type="submit" class="btn btn-primary">Signup</button>
   </form>
 </div>
+
+<script src="./js/script.js"></script>
