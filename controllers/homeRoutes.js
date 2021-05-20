@@ -33,6 +33,10 @@ router.get('/', async (req, res) => {
 router.get('/dashboard', async(req, res) => {
     res.render('dashboard')
 })
+
+router.get('/dashboard/book/:id', async(req, res) => {
+    res.render('bookinfo')
+})
 //The book page will include thumbnail, title, author, description, publish date from the books npm package
 //The book page will also include reviews
 router.get('/booksearch', async (req, res) => {
