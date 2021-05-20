@@ -1,26 +1,47 @@
-body {
-  height: 100vh;
-}
-
-main {
-  height: 100%;
-}
-
-.carousel-inner {
-  width:640px;
-  height:360px;
-}
-
 #book-scroll {
   overflow-x: scroll;
   white-space: nowrap;
 }
 
-.login-wrapper {
-  background-color: gray;
-  height: 100%;
+@media only screen and (max-width: 767px) {
+  .carousel-img {
+    width: 100vw;
+    height: 30vh;
+  }
+  
+  .carousel h5 {
+    font-size: large;
+  }
+
+  .site-description p {
+    font-size: medium;
+    text-align: justify;
+  }
+
+  .card-title {
+    font-size: medium;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .ins-description {
+    font-size: small;
+  }
 }
 
-.login-wrapper > div {
-  background-color: white;
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  main{
+    max-width: 97%;
+    margin: auto;
+  }
+  .carousel-img {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  h6 {
+    font-size: large;
+  }
 }
