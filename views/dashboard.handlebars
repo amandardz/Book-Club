@@ -2,16 +2,19 @@
   <a href="/dashboard/book/1">
     <div class="card mb-3">
       <div class="row g-0">
+        {{#each books}}
         <div class="col-6">
           Book Image
         </div>
         <div class="col-6">
           <div class="card-body text-center">
             <h6></h6>
-            <h4 class="card-title">Book Title</h4>
-            <p class="card-text">Book Description</p>
+            <h4 class="card-title">Book Title: {{title}}</h4>
+            <p class="card-text">Book Description: {{description}}</p>
+            <p>Number of reviews: {{reviews.length}}</p>
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
   </a>

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//this matches to the /api/reviews route
 router.post('/', withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({

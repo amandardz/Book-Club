@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Book } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// this matches /api/books
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBook = await Book.create({
