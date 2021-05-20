@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require('./user');
 const Book = require('./Book');
 const Review = require('./Review')
 
@@ -10,6 +10,11 @@ Review.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
+
+Book.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+})
 
 User.hasMany(Review, {
     foreignKey: 'user_id'

@@ -19,13 +19,9 @@ Book.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    publisher: {
-      type: DataTypes.string,
-      allowNull: false,
-    },   
     description: {
         type: DataTypes.STRING,
-        allowNull
+        allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
