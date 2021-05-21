@@ -1,32 +1,35 @@
-<div class="book-search p-5 my-3 bg-light rounded-3">
-  <div class="text-center">
-    <h1 class="display-5 fw-bold mb-3">Book Search</h1>
-    <p class="fs-4">Search for a book to add and review</p>
-    <form class="search-button d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" id="search-form" aria-label="Search">
-      <button class="btn btn-outline-dark" type="submit">Search</button>
-    </form>
-  </div>
-</div>
-
+    <section>
+      <div class="p-5 m-2 bg-light rounded-3">
+        <div class="container-fluid text-center">
+          <h1 class="display-5 fw-bold">Book Page</h1>
+          <p class="fs-4">Search for books to view their reviews</p>
+          <form class="search-button d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" id="search-form" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
     
 
-<div class="book-search card mb-3">
-  <div class="row g-0">
-    <div class="col-5">
-      Book Image
-    </div>
-    <div class="col-6">
-      <div class="card-body text-center">
-        <h4 class="card-title">Book Title</h4>
-        <p class="card-text">Book Description</p>
-      </div>
-    </div>
-    <div class="col-1 d-flex align-items-center justify-content-center" id="searchAddBtn">
-      <button class="btn" type="click"><i class="bi bi-plus-circle"></i></button>
-    </div>
-  </div>
-</div>
+    <section class="container-fluid" id="book-listings">
+      {{!-- <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-6">
+            <img src="">
+          </div>
+          <div class="col-6">
+            <div class="card-body text-center">
+              <h6></h6>
+              <h4 class="card-title">Book Title</h4>
+              <p class="card-text">Book Description</p>
+            </div>
+          </div>
+        </div>
+      </div> --}}
+    </section>
 
 
-<script src="/js/book-search.js"></script>
+
+
+    <script src="/js/book-search.js"></script>
