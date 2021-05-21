@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // this matches /api/books
 router.post('/', withAuth, async (req, res) => {
+  console.log("creating...")
   try {
     const newBook = await Book.create({
       ...req.body,
@@ -11,7 +12,9 @@ router.post('/', withAuth, async (req, res) => {
     });
     
     res.status(200).json(newBook);
+    console.log('created')
   } catch (err) {
+    console.log('failed')
     res.status(400).json(err);
   }
 });
