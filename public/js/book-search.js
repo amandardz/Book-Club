@@ -64,7 +64,7 @@ const postFormHandle = async (event) => {
     });
     console.log('attempting post...')
     if (response.ok) {
-    //  document.location.replace('/');
+     document.location.replace('/');
 console.log('success!')
 
    } else {

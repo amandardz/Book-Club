@@ -1,16 +1,14 @@
 <div class="card my-3 mb-3">
-  <div class="row g-0">
-    <div class="col-6">
-      Book Image
+    <div class="col-2">
+      <img src="{{books.thumbnail}}" alt="book image"> 
     </div>
-    <div class="col-6">
+    <div class="col-9">
       <div class="card-body text-center">
-        <h6></h6>
-        <h4 class="card-title">Book Title</h4>
-        <p class="card-text">Book Description</p>
+        <h4 class="card-title">Book Title: {{books.title}}</h4>
+        <p class="card-text">Book Description: {{books.description}}</p>
+        <p>Number of reviews: {{reviews.length}}</p>
       </div>
     </div>
-  </div>
 </div>
 
 <form class="container-fluid form">

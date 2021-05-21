@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 //This route will pull info from the books database; display the book info & the number of reviews
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const bookData = await Book.findAll({
             include: [
@@ -20,10 +20,7 @@ router.get('/dashboard', async (req, res) => {
                         'comment',
                         'user_id'
                     ]
-                }, {
-                    model: User,
-                    attributes: ['name'],
-                }
+                }, 
             ],
         });
 
@@ -51,15 +48,23 @@ router.get('/dashboard/book/:id', withAuth, async (req, res) => {
                 },
             ],
         });
-        res.render('bookinfo', bookData)
+
+        const books = bookData.get({ plain: true });
+        
+        res.render('bookinfo', {
+            books,
+            logged_in: req.session.logged_in
+        })
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/booksearch', async (req, res) => {
+router.get('/booksearch', withAuth, async (req, res) => {
 
-    res.render('booksearch');
+    res.render('booksearch', {
+        logged_in: req.session.logged_in
+    });
 
 });
 
