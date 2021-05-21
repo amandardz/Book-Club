@@ -1,4 +1,6 @@
 const bookSearchListEl = document.querySelector('#book-listings')
+var searchedBookList =[];
+var clicked_id;
 
 
 const onSearch = async (event) => {
@@ -7,11 +9,14 @@ const onSearch = async (event) => {
     const userQuery = document.querySelector('#search-form').value.trim();
     var bookSearch = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${userQuery}`)
     bookSearchListEl.innerHTML =''
+    var bookList =[];
+    
 
      for(var i = 0; i < count; i++){
         var book = bookSearch.data.items[i]
+        console.log(book)
         let bookTitle = book.volumeInfo.title
-        let bookDesc= book.searchInfo.textSnippet
+        let bookDesc = book.volumeInfo.description
         let bookThumb= book.volumeInfo.imageLinks.thumbnail
         var bookDiv = document.createElement('div') 
         bookDiv.classList.add('card', 'mb-3')
@@ -21,37 +26,52 @@ const onSearch = async (event) => {
          '<h6></h6>' + '<h4 class="card-title">' + bookTitle + '</h4>'
          + '<p class="card-text">' + bookDesc + '</p>' + '</div>' + '</div>' + '</div>'
         buttonAdd = document.createElement('form')
-        buttonAdd.classList.add('add-form' + i, 'd-flex');
-        buttonAdd.innerHTML = '<button class="btn btn-outline-dark" type="submit">+ add this book</button>';
-        bookSearchListEl.appendChild(buttonAdd)
-        let addButton = document.querySelector('.add-form' + i).addEventListener('submit', postFormHandle);
-
+        buttonAdd.classList.add('add-form'+i, 'd-flex');
+        buttonAdd.innerHTML = '<button class="btn btn-outline-dark" id ="' + i + ' " type="submit">+ add this book</button>';
+        bookDiv.appendChild(buttonAdd)
+        let addBook = document
+        .querySelector('.add-form'+i)
+        .addEventListener('submit', postFormHandle);
+        bookList.push(book);
+    
     }
+    console.log(searchedBookList)
+    searchedBookList = bookList
+    console.log(searchedBookList)
 
-
+    return searchedBookList
 }
-
-
 
 //need a function that takes in a book and posts that book to the database 
 const postFormHandle = async (event) => {
-    // event.preventDefault();
-    console.log("I" + event +" have been clicked!")
-//  const response = await fetch('/api/books', {
-//     method: 'POST',
-//      body: JSON.stringify({ name, email, password }),
-//      headers: { 'Content-Type': 'application/json' },
-//    });
+    event.preventDefault();
 
-   if (response.ok) {
-    document.location.replace('/');
-    console.log("I" + event +" have been clicked!")
+    buttonId = parseInt(event.submitter.id);
+    title = searchedBookList[buttonId].volumeInfo.title;
+    author = searchedBookList[buttonId].volumeInfo.authors[0];
+    description= searchedBookList[buttonId].volumeInfo.description;
+    thumbnail = searchedBookList[buttonId].volumeInfo.imageLinks.thumbnail;
 
-  } else {
-    document.location.replace('/');
-    alert('Failed to log in.');
-    console.log('oh no failure');
-  }
+    console.log(title)
+    console.log(description)
+    console.log(author)
+    console.log(thumbnail)
+
+  const response = await fetch('/api/books', {
+     method: 'POST',
+      body: JSON.stringify({ title, author, description, thumbnail}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    console.log('attempting post...')
+    if (response.ok) {
+    //  document.location.replace('/');
+console.log('success!')
+
+   } else {
+           document.location.replace('/');
+     alert('Failed to log in.');
+     console.log('oh no failure');
+   }
  };
 
 //write a click event to grab the selected book and save on the database
