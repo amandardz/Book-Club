@@ -21,8 +21,8 @@ const onSearch = async (event) => {
         var bookDiv = document.createElement('div') 
         bookDiv.classList.add('card', 'mb-3')
         bookSearchListEl.appendChild(bookDiv)
-        bookDiv.innerHTML = '<div class="book-search row g-0">' + '<div class="col-6">' + '<img src="' + bookThumb +  'alt='+ bookTitle +'">' +
-         '</div>' + '<div class="col-6">' + '<div class= "card-body text-center"' + '<h4 class="card-title">' + bookTitle + '</h4>'
+        bookDiv.innerHTML = '<div class="book-search d-flex flex-row">' + '<div class="col-3 me-2">' + '<img src="' + bookThumb +  'alt='+ bookTitle +'">' +
+         '</div>' + '<div class="col-9">' + '<div class= "card-body text-center"' + '<h4 class="card-title">' + '<span class="fw-bold">' + bookTitle + '</span>' + '</h4>'
          + '<p class="card-text">' + bookDesc + '</p>' + '</div>' + '</div>' + '</div>'
         buttonAdd = document.createElement('form')
         buttonAdd.classList.add('add-form'+i, 'd-flex');
