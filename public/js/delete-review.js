@@ -9,7 +9,7 @@ const deleteReviewHandler = async (event) => {
         alert("Your comment has been deleted!")
         location.reload();
     } else {
-        alert('Incorrect user, you caannot delete this comment');
+        alert('Incorrect user, you cannot delete this comment');
     }
 
 };
