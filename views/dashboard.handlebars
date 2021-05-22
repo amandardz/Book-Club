@@ -1,22 +1,17 @@
-<section class="container-fluid my-2" id="book-scroll">
-  
-    <div class="card mb-3">
-      <div class="row g-0">
-        {{#each books}}
-        <div class="col-6">
-          <img src="{{thumbnail}}" alt="book image"> 
-        </div>
-        <div class="col-6">
-          <div class="card-body text-center">
-            <h6></h6>
-            <a href="/dashboard/book/{{id}}"><h4 class="card-title">Book Title: {{title}}</h4>   </a>
-            <p class="card-text">Book Description: {{description}}</p>
-            <p>Number of reviews: {{reviews.length}}</p>
-          </div>
-        </div>
-        {{/each}}
+<div class="container-fluid my-3" id="book-scroll">
+  {{#each books}}
+  <div class="d-flex flex-row align-items-center">
+    <div class="col-3">
+      <img src="{{thumbnail}}" alt="book image"> 
+    </div>
+    <div class="col-9">
+      <div class="card-body text-center">
+        <h6></h6>
+        <a href="/dashboard/book/{{id}}" class="link-dark"><h4 class="card-title">Book Title: {{title}}</h4>   </a>
+        <p class="card-text"><span class="fw-bold">Book Description:</span> {{description}}</p>
+        <p><span class="fw-bold">Number of reviews: </span>{{reviews.length}}</p>
       </div>
     </div>
-
-</section>
-
+  </div>
+  {{/each}}
+</div>

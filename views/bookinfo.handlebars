@@ -1,31 +1,35 @@
-<div class="card my-3 mb-3">
-    <div class="col-2">
+<div class="container-fluid d-flex flex-row align-items-center my-3 mb-3">
+    <div class="col-3 me-2">
       <img src="{{books.thumbnail}}" alt="book image"> 
     </div>
     <div class="col-9">
-      <div class="card-body text-center">
-        <h4 class="card-title">Book Title: {{books.title}}</h4>
-        <p class="card-text">Book Description: {{books.description}}</p>
-        <p>Number of reviews: {{reviews.length}}</p>
+      <div class="card-body">
+        <h4 class="card-title text-center">Book Title: {{books.title}}</h4>
+        <p class="card-text"><span class="fw-bold">Book Description:</span> {{books.description}}</p>
+        <p><span class="fw-bold">Number of reviews: </span> {{reviews.length}}</p>
       </div>
     </div>
 </div>
 
-<form class="container-fluid form">
-  <div class="input-group">
-    <textarea class="form-input" id="review-content" name="review-content" placeholder="Post a review"></textarea>
-    <button type="submit" class="btn btn-primary">Post</button>
+
+<form class="form-floating">
+  <div>
+    <textarea class="form-control" id="review-content" name="review-content" placeholder="Write a review"></textarea>
+  </div>
+  <div class="mt-1 d-flex align-item-center justify-content-center">
+    <button type="click" class="btn btn-outline-dark" id="commentBtn">Post My Review</button>
   </div>
 </form>
 
-<div>
-  <div class="card my-3">
-    <div class="row g-0">
-      <div class="col-10">
-        comment content
-      </div>
-      <div class="col-2">
-      </div>
+
+
+<div class="container-fluid mt-5 mb-2">
+  <div class="d-flex flex-row justify-content-between">
+    <div>
+      comment content
+    </div>
+    <div>
+      <button type="click" class="btn btn-danger" id="delCommentBtn">Delete</button>
     </div>
 </div>
 
