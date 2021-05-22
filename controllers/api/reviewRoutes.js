@@ -7,14 +7,15 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
             ...req.body,
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            book_id: req.body.book_id
         });
-        res.status(200).json(newReview)
         console.log('hi I worked!')
+        res.status(200).json(newReview)
     } catch (err) {
         console.log(err)
         res.status(400).json(err);
-        console.log('fuck I failed!')
+        console.log(newComment)
     }
 });
 
