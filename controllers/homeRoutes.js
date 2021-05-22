@@ -45,10 +45,6 @@ router.get('/dashboard/book/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: Review,
-                    attributes: [
-                        'comment',
-                        'user_id'
-                    ], 
                     include: [{
                         model: User,
                         attributes: ['name']
