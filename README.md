@@ -11,12 +11,11 @@ As a book enthusiast, I want to be able to view a list of books and their review
 <img src="public\images\wireframe2.jpg" alt="Book Search Wireframe">
 <img src="public\images\wireframe3.jpg" alt="Dashboard Wireframe">
 <img src="public\images\wireframe4.jpg" alt="Book Info/Review Wireframe">
-<img src="public\images\flowdiagram.jpg" alt="User Flow Diagram">
 
 ![Site Walkthrough](public/images/book_club.gif)
 
 ## Flow Diagram
-*To be added*
+<img src="public\images\flowdiagram.jpg" alt="User Flow Diagram">
 
 ## Tasks
 [GitHub Repo](https://github.com/amandardz/Book-Club)
