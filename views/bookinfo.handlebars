@@ -32,10 +32,13 @@
     <div>
       Written by: {{user.name}}
     </div>
+
     <div>
-      <button type="click" class="btn btn-danger" id="delCommentBtn">Delete</button>
+      <button type="click" class="btn btn-danger delCommentBtn" data-id="{{id}}">Delete</button>
     </div>
+    
 </div>
 {{/each}}
 
 <script src="/js/create-review.js"></script>
+<script src="/js/delete-review.js"></script>

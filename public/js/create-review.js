@@ -12,7 +12,7 @@ const reviewFormHandle = async (event) => {
 
       if (response.ok) {
         console.log("I've been clicked!")
-        document.location.replace('/');
+        location.reload();
       } else {
         alert('Failed to post comment.');
         console.log(comment_text);
