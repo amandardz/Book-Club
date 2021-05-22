@@ -12,11 +12,12 @@
 </div>
 
 
-<form class="form-floating">
+<form class="new-review-form form-floating">
   <div>
     <textarea class="form-control" id="review-content" name="review-content" placeholder="Write a review"></textarea>
   </div>
   <div class="mt-1 d-flex align-item-center justify-content-center">
+    <input type="hidden" id="custId" name="custId" value="{{books.id}}">
     <button type="click" class="btn btn-outline-dark" id="commentBtn">Post My Review</button>
   </div>
 </form>
@@ -33,3 +34,4 @@
     </div>
 </div>
 
+<script src="/js/create-review.js"></script>
