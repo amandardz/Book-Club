@@ -23,15 +23,19 @@
 </form>
 
 
-
+{{#each reviews}}
 <div class="container-fluid mt-5 mb-2">
   <div class="d-flex flex-row justify-content-between">
     <div>
-      comment content
+      {{comment}}
+    </div>
+    <div>
+      Written by: {{user.name}}
     </div>
     <div>
       <button type="click" class="btn btn-danger" id="delCommentBtn">Delete</button>
     </div>
 </div>
+{{/each}}
 
 <script src="/js/create-review.js"></script>

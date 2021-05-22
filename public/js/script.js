@@ -20,8 +20,8 @@ const loginFormHandler = async (event) => {
 };
 
 const loginFormEl = document
-.querySelector('.login-form');
-if(loginFormEl) {
+  .querySelector('.login-form');
+if (loginFormEl) {
   loginFormEl.addEventListener('submit', loginFormHandler);
 };
 
@@ -48,9 +48,9 @@ const signupFormHandler = async (event) => {
 };
 
 const signupFormEl = document
-.querySelector('.signup-form');
+  .querySelector('.signup-form');
 
-if(signupFormEl) {
+if (signupFormEl) {
   signupFormEl.addEventListener('submit', signupFormHandler);
 };
 
@@ -70,6 +70,6 @@ const logout = async () => {
 
 const logoutEl = document.querySelector('#logout')
 
-if(logoutEl){
+if (logoutEl) {
   logoutEl.addEventListener('click', logout);
 }

@@ -19,7 +19,6 @@ const reviewFormHandle = async (event) => {
       }
     }
   };
-
   
   document
   .querySelector('.new-review-form')
