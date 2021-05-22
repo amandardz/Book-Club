@@ -19,7 +19,7 @@ const onSearch = async (event) => {
         let bookDesc = book.volumeInfo.description
         let bookThumb= book.volumeInfo.imageLinks.thumbnail
         var bookDiv = document.createElement('div') 
-        bookDiv.classList.add('card', 'mb-3')
+        bookDiv.classList.add('container-fluid', 'mb-3')
         bookSearchListEl.appendChild(bookDiv)
         bookDiv.innerHTML = '<div class="book-search d-flex flex-row">' + '<div class="col-3 me-2">' + '<img src="' + bookThumb +  'alt='+ bookTitle +'">' +
          '</div>' + '<div class="col-9">' + '<div class= "card-body text-center"' + '<h4 class="card-title">' + '<span class="fw-bold">' + bookTitle + '</span>' + '</h4>'
