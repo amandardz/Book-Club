@@ -20,4 +20,4 @@ As a book enthusiast, I want to be able to view a list of books and their review
 ## Tasks
 [GitHub Repo](https://github.com/amandardz/Book-Club)
 
-[Heroku Deployed App](https://quiet-earth-09250.herokuapp.com/)
+[Heroku Deployed App](https://bookclub11.herokuapp.com/)
